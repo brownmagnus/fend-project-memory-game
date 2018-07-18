@@ -20,11 +20,20 @@
  */
  function initGame() {
    var deck = document.querySelector('.deck');
+   var movesText = document.querySelector('.moves');
+   var fStar = document.querySelector('.sThree');
+   var tStar = document.querySelector('.sTwo');
+   var oStar = document.querySelector('.sOne');
    var cardHTML = shuffle(cards).map(function(card) {
      return generateCard(card);
    });
    deck.innerHTML = cardHTML.join('');
-
+   cardsInList = document.querySelectorAll('.card');
+   cardsInList.forEach(gaming);
+   movesText.innerText = 0;
+   fStar.classList.remove('sHide');
+   tStar.classList.remove('sHide');
+   oStar.classList.remove('sHide');
  }
 
  initGame();
