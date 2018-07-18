@@ -95,12 +95,18 @@ function gaming(card) {
   });
 }
 
-//moves functionality
-
-
 // function to count moves and remove sters
 function movesDone() {
   var movesText = document.querySelector('.moves');
+  var fStar = document.querySelector('.sThree');
+  var tStar = document.querySelector('.sTwo');
+  var oStar = document.querySelector('.sOne');
+
   var num = parseInt(movesText.innerText);
   movesText.innerText = num + 1;
+  if (num == 10) {
+    fStar.classList.add('sHide');
+  } if (num == 20) {
+    tStar.classList.add('sHide');
+  }
 }
