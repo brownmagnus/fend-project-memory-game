@@ -56,3 +56,15 @@ function shuffle(array) {
  */
 var restartGame = document.querySelector('.restart');
 restartGame.addEventListener('click', initGame);
+
+var cardsInList = document.querySelectorAll('.card');
+var openCards = [];
+
+cardsInList.forEach(gaming);
+
+function gaming(card) {
+  card.addEventListener('click', function(e) {
+    openCards.push(card);
+    card.classList.add('open', 'show');
+  });
+}
