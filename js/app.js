@@ -100,7 +100,7 @@ function gaming(card) {
             }, 1000);
         }
         movesDone();
-
+        wonGame();
       }
     }
 
@@ -137,4 +137,30 @@ function gameTiming() {
 
 function stopTimer() {
   clearInterval(intervals);
+}
+
+var dialog = document.querySelector('.congratsDialog');
+var replayButton = document.querySelector('.done');
+var cancelButton = document.querySelector('.cancel');
+var finishTime = document.querySelector('.jobTime');
+
+function openModal() {
+  finishTime.innerText = sTime;
+  dialog.showModal();
+  stopTimer();
+}
+
+cancelButton.addEventListener('click', function() {
+        dialog.close();
+});
+
+replayButton.addEventListener('click', function() {
+        dialog.close(initGame());
+});
+
+function wonGame() {
+  let cardsMatch = document.querySelectorAll('.match');
+  if (cardsMatch.length == 16) {
+      openModal();
+    }
 }

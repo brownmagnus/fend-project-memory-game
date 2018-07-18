@@ -114,3 +114,11 @@ h1 {
 .stars .fa-star.sHide {
   display: none;
 }
+
+dialog {
+    background: #ffffff url('../img/img_congrats.jpg');
+    font: italic small-caps bold 16px/2 cursive;
+    width: 50%;
+    align-items: center;
+    color: Blue;
+}
