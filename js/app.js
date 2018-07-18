@@ -34,6 +34,9 @@
    fStar.classList.remove('sHide');
    tStar.classList.remove('sHide');
    oStar.classList.remove('sHide');
+   stopTimer();
+   gameTiming();
+   sTime = 0;
  }
 
  initGame();
@@ -118,4 +121,20 @@ function movesDone() {
   } if (num == 20) {
     tStar.classList.add('sHide');
   }
+}
+
+var timeLabel = document.querySelector('.gameTime');
+var sTime = 0;
+var intervals;
+
+function gameTiming() {
+  intervals = setInterval(function() {
+    sTime = sTime + 1;
+        timeLabel.innerText = sTime;
+
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(intervals);
 }
