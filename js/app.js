@@ -87,9 +87,20 @@ function gaming(card) {
               openCards = [];
             }, 1000);
         }
+        movesDone();
 
       }
     }
 
   });
+}
+
+//moves functionality
+
+
+// function to count moves and remove sters
+function movesDone() {
+  var movesText = document.querySelector('.moves');
+  var num = parseInt(movesText.innerText);
+  movesText.innerText = num + 1;
 }
